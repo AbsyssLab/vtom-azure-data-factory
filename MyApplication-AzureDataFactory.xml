@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Domain name="server-demo" stamp="VTEXPORT : 7.2.1a1 EN LINUX_X64 2024/07/24 Visual Tom (c) Absyss" version="7.2.1a1" generationDate="Mon Sep 16 11:48:38 2024">
+  <Queues>
+    <Queue name="queue_azdatafactory" comment="Batch queue for Azure Data Factory integration"/>
+  </Queues>
+  <Icons>
+    <Icon name="AzureDataFactory" width="40" height="40" fileSize="1043" fileContent="eJwBEwTs+4lQTkcNChoKAAAADUlIRFIAAAAoAAAAKAgGAAAAjP64bQAAAAlwSFlzAAAgzgAAIM4BYw7s3AAAABl0RVh0U29m&#10;dHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOgSURBVFiF7ZldaFtlGMd/b87JOU3SpR+2Xac1myJSN7EgXohahzAVr8Sb&#10;QOc6QfADr70Y00sRBiLIxGtHezGYA91ExBsvrEyHFRWdTrdpzTbJsibNR/N5zvt4kTYxbbemzcci9H+T877nOc/7O8/7PCc5&#10;T5SI0MkyV07E4/ER13UfBR4RkV1KqV6gDwgAi0AcmBeROeArrfXM8PBwrFWAajmCsVgsDBx2YeycWPwpXiJisIBBDkUJhRfB&#10;h9CnNCM43KVK7FZFMeBbETkyNDT0cUsAY7HYG8Bb58RiSm9jXjx1O+hXmgmVZsxTBDgyODh4qJmAHgAtMgHwg7Zq4LTrUshk&#10;ySZSZGIJsokkhUwW7bgVm7h4+E5sAETUS82Eg6Uc/PDryIUXHwvtDhuLaod2OD6X4pdf58jEEqxVREop/H1BRkdDTNzdz16j&#10;ACAfzV6Zfe2ZgaYCKhFBTU5Hnn7g9uh74fuk328+CHjSGmbm81zNOyQLmrSjCRiKXstg2Gfy+EAXwXKwnWTenX395PniJ7OR&#10;cZk6oFoCiGmNYFhs7wn8HX5o++9P3BN0Qj22HezydPm8yu81VLCkJZ13yKQKOje3UMyd/jmpT/4YG01lsvfi5KGUp9mAqx4z&#10;0UwpdHQmGjp6JgGGBR4TDLP8CaBd0A64JXCL4LorXTRV9ZfrLdIWYKPaAmxUbQdU+6f2qgPHnrqpTfiETz1/7E1oM6CanB7H&#10;I5+i1P03tAmf8GHlTqHUK9BGQDU5PY7oz4DudeFg3/JcWwA3CwdtAGwEDloM2CgctBCwGXDQIsBmwUELAOuBQ1RdcLDGz62G&#10;JfpzwL+O0eH1bcpqxRbXs3BdcLD1Xdy4Oh5wQ0UyEDDZ2WOX30m0w2LO5LerxRqbXYPd3NZtV8bRZI7L8WxlrBTsuaMX22tU&#10;5i5E0ySztX42BXj6hZ08HKrN77G3z/DTXwUAArbJH+88h2lUX+wWskX6Xj5eGe/bs4MvDj1Z4+PU9xGefffLNdfc0Bb7vavN&#10;A1Y1EpbpqYED8Fu1MQjYq2Oy0mbTgLdCHQ+4oRz8JpKl2/aACCDkS5pIolA5v1hwOHvxOgPbqkVy6VqmxsfFaxnO/5PC+59U&#10;OHvp+g3XXNX6wLDA9FI5XrezUIRSgeXWB6I3cs8302WZPnhnx2/x/wawtR2gzcmFapG8D7wKVDO3pm+pQGsbcYfQLoi7lIvu&#10;Us7p8gUKEBVpGE2JAB8sHXb23xD/Ari5lqcaTbkVAAAAAElFTkSuQmCCJo7o3A=="/>
+</Icons>
+  <JobApplicationServers>
+    <JobApplicationServer id="JASac1500025126708866e7cedb0000000b" name="AzureDataFactory" comment="Connector to trigger Azure Data Factory pipelines" type="GENERIC">
+      <Properties>
+        <Property key="VTCUSTOM_DEFAULT_QUEUE" value="queue_azdatafactory"/>
+        <Property key="VTCUSTOM_DEFAULT_SCRIPT" value=""/>
+        <Property key="VTCUSTOM_FIELDS.0.COMMENT" value="Name of the Azure Data Factory"/>
+        <Property key="VTCUSTOM_FIELDS.0.DEFAULT_VALUE" value=""/>
+        <Property key="VTCUSTOM_FIELDS.0.NAME" value="Data Factory"/>
+        <Property key="VTCUSTOM_FIELDS.0.TYPE" value="character"/>
+        <Property key="VTCUSTOM_FIELDS.0.VISIBLE" value="true"/>
+        <Property key="VTCUSTOM_FIELDS.1.COMMENT" value="Name of the pipeline to trigger"/>
+        <Property key="VTCUSTOM_FIELDS.1.DEFAULT_VALUE" value=""/>
+        <Property key="VTCUSTOM_FIELDS.1.NAME" value="Pipeline"/>
+        <Property key="VTCUSTOM_FIELDS.1.TYPE" value="character"/>
+        <Property key="VTCUSTOM_FIELDS.1.VISIBLE" value="true"/>
+        <Property key="VTCUSTOM_FIELDS.2.COMMENT" value="Short JSON or JSON file"/>
+        <Property key="VTCUSTOM_FIELDS.2.DEFAULT_VALUE" value=""/>
+        <Property key="VTCUSTOM_FIELDS.2.NAME" value="Parameters"/>
+        <Property key="VTCUSTOM_FIELDS.2.TYPE" value="character"/>
+        <Property key="VTCUSTOM_FIELDS.2.VISIBLE" value="true"/>
+        <Property key="VTCUSTOM_FIELDS_COUNT" value="3"/>
+        <Property key="VTCUSTOM_ICON_NAME" value="@AzureDataFactory"/>
+      </Properties>
+    </JobApplicationServer>
+  </JobApplicationServers>
+</Domain>
