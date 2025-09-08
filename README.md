@@ -24,17 +24,21 @@ Consultings days can be requested to help for the implementation.
 
 # Instructions
 
-  * Create an Azure Application and set the following environment variables in config.py in the same folder (a template is available in the repository):
+  * Create an Azure Application and set the following environment variables in a object Context Visual TOM :
     * `AZURE_SUBSCRIPTION_ID`: Subscription ID of your Azure subscription
     * `AZURE_TENANT_ID`: Tenant ID of your Azure Active Directory
     * `AZURE_CLIENT_ID`: Client ID of your Azure Active Directory application
     * `AZURE_CLIENT_SECRET`: Client secret of your Azure Active Directory application
     * `AZURE_DATA_FACTORY_RESOURCE_GROUP`: Resource group of your Azure Data Factory
+      
+  You can use Secrets :
+
+  ![Custom application screenshot](screenshots/AzureDataFactory_Context.png?raw=true)
   * Create in Visual TOM a "Custom Application" connection with the following definition or import the file MyApplication-AzureDataFactory.xml:
   ```bash
   vtimport -x -f MyApplication-AzureDataFactory.xml
   ```
-  ![Custom application screenshot](screenshots/Azure_DataFactory_CustomApplication.png?raw=true)
+  ![Custom application screenshot](screenshots/AzureDataFactory_CustomApp_WebInterface.png?raw=true)
   * Create the batch queue on the Agents and update the submitter with actual path of azureDataFactory.py
 
 Description of the parameters:
