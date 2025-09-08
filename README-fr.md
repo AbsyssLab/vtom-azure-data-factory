@@ -24,17 +24,21 @@ Il est possible de faire appel à des jours de consulting pour l'implémentation
 
 # Consignes
 
-  * Créer une application Azure et définir les variables d'environnement suivantes dans config.py dans le même dossier (un template est disponible dans le dépôt):
+  * Créer une application Azure et définir les variables d'environnement suivantes dans un objet Contexte dans Visual TOM :
     * `AZURE_SUBSCRIPTION_ID`: Subscription ID de votre Azure subscription
     * `AZURE_TENANT_ID`: Tenant ID de votre Azure Active Directory
     * `AZURE_CLIENT_ID`: Client ID de votre application Azure Active Directory
     * `AZURE_CLIENT_SECRET`: Secret client de votre application Azure Active Directory
     * `AZURE_DATA_FACTORY_RESOURCE_GROUP`: Resource group de votre Azure Data Factory
+
+  L'utilisation des Ressources Secrets est recommandée :
+  ![Custom application screenshot](screenshots/AzureDataFactory_Context.png?raw=true)
+  
   * Créer dans Visual TOM une connexion "Custom Application" avec la définition suivante ou importer le fichier MyApplication-AzureDataFactory.xml:
   ```bash
   vtimport -x -f MyApplication-AzureDataFactory.xml
   ```
-  ![Custom application screenshot](screenshots/Azure_DataFactory_CustomApplication.png?raw=true)
+  ![Custom application screenshot](screenshots/AzureDataFactory_CustomApp_WebInterface.png?raw=true)
   * Créer la queue batch sur les Agents et mettre à jour le submitter avec le chemin réel de azureDataFactory.py
 
 Description des paramètres:
