@@ -31,7 +31,7 @@ Consultings days can be requested to help for the implementation.
     * `AZURE_CLIENT_SECRET`: Client secret of your Azure Active Directory application
     * `AZURE_DATA_FACTORY_RESOURCE_GROUP`: Resource group of your Azure Data Factory
       
-  You can use Secrets :
+  Resources Secret are recommanded :
 
   ![Custom application screenshot](screenshots/AzureDataFactory_Context.png?raw=true)
   * Create in Visual TOM a "Custom Application" connection with the following definition or import the file MyApplication-AzureDataFactory.xml:
