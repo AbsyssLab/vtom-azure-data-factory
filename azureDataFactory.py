@@ -4,7 +4,6 @@ import time
 import argparse
 import json
 import os
-from config import *
 
 #####################################################
 ### Function to print messages to the standard output
@@ -28,6 +27,19 @@ def load_json_param(param):
             return json.loads(param)
         except json.JSONDecodeError:
             raise ValueError("Invalid JSON string or file path provided")
+
+#####################################################
+### Load Azure configuration from environment variables
+#####################################################
+AZURE_SUBSCRIPTION_ID = os.getenv("AZURE_SUBSCRIPTION_ID")
+AZURE_TENANT_ID = os.getenv("AZURE_TENANT_ID")
+AZURE_CLIENT_ID = os.getenv("AZURE_CLIENT_ID")
+AZURE_CLIENT_SECRET = os.getenv("AZURE_CLIENT_SECRET")
+AZURE_DATA_FACTORY_RESOURCE_GROUP = os.getenv("AZURE_DATA_FACTORY_RESOURCE_GROUP")
+
+# Checking security
+if not all([AZURE_SUBSCRIPTION_ID, AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_DATA_FACTORY_RESOURCE_GROUP]):
+    raise EnvironmentError("⚠️ Some variables are not correctly defined.")
 
 # Argument parsing
 parser = argparse.ArgumentParser(description='Trigger and monitor an Azure Data Factory pipeline.')
