@@ -46,7 +46,6 @@ Il est possible de faire appel à des jours de consulting pour l'implémentation
     Quand il est activé, l'invite de commande affiche généralement (venv) ou (.venv) devant → tous les pip install se feront dans cet environnement.
 
     Installer les packages python requis dans votre environnement virtuel :
-    Sous Windows
     ```
     pip install -r requirements.txt
     ```
