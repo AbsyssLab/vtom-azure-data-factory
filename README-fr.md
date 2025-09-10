@@ -16,11 +16,55 @@ Il est possible de faire appel à des jours de consulting pour l'implémentation
   * Visual TOM 7.1.2 ou plus
   * Python 3.x ou plus
   * Azure Data Factory resource
-  * Installer les packages python requis avec pip:
+  * Création d'un environnement virtuel venv :
+    
+    Se positionner dans le répertoire projet (qui contient les scripts et le fichier requirements.txt) :
+    * python → ton interpréteur
+    * .venv → nom du dossier qui contiendra l’environnement virtuel (bonne pratique : toujours dans le projet).
+
+    En ligne de commande (Windows ou Linux) :
     ```bash
+    python -m venv .venv
+    ```
+    Cela crée une arborescence :
+    
+    mon_projet/
+    * .venv/       <- environnement virtuel
+    * azureDataFactory.py
+    * requirements.txt
+
+  * Activation de l'environnement virtuel :
+
+     Sous Windows :
+     ```
+     mon_projet\.venv\Scripts\activate.bat
+     ```
+     Sous Linux :
+     ```
+     source mon_projet/.venv/bin/activate
+     ```
+    Quand il est activé, l'invite de commande affiche généralement (venv) ou (.venv) devant → tous les pip install se feront dans cet environnement.
+
+    Installer les packages python requis dans votre environnement virtuel :
+    Sous Windows
+    ```
     pip install -r requirements.txt
     ```
-  * Agent Unix (l'utilisation sous Windows sera disponible plus tard)
+
+ * Installation et paramétrage des queues Windows et Linux :
+    * Agent Unix : tom_submit.azdatafactory
+    * Agent Windows : submit_queue_azdatafactory.bat 
+  
+  Renseigner la variable **PROJECT_PATH** dans la queue batch (Windows ou Linux) pour indiquer votre répertoire projet.
+  
+  Exemples : 
+  ```
+  set PROJECT_PATH=%TOM_HOME%\SCRIPTS\AzureDataFactory\
+  ```
+  ou
+  ```
+ project_path=/var/lib/absyss/visual-tom/scripts/azure/az-datafactory
+  ```
 
 # Consignes
 
