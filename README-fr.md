@@ -16,25 +16,72 @@ Il est possible de faire appel à des jours de consulting pour l'implémentation
   * Visual TOM 7.1.2 ou plus
   * Python 3.x ou plus
   * Azure Data Factory resource
-  * Installer les packages python requis avec pip:
+  * Création d'un environnement virtuel venv :
+    
+    Se positionner dans le répertoire projet (qui contient les scripts et le fichier requirements.txt) :
+    * python → ton interpréteur
+    * .venv → nom du dossier qui contiendra l’environnement virtuel (bonne pratique : toujours dans le projet).
+
+    En ligne de commande (Windows ou Linux) :
     ```bash
+    python -m venv .venv
+    ```
+    Cela crée une arborescence :
+    
+    mon_projet/
+    * .venv/       <- environnement virtuel
+    * azureDataFactory.py
+    * requirements.txt
+
+  * Activation de l'environnement virtuel :
+
+     Sous Windows :
+     ```
+     mon_projet\.venv\Scripts\activate.bat
+     ```
+     Sous Linux :
+     ```
+     source mon_projet/.venv/bin/activate
+     ```
+    Quand il est activé, l'invite de commande affiche généralement (venv) ou (.venv) devant → tous les pip install se feront dans cet environnement.
+
+    Installer les packages python requis dans votre environnement virtuel :
+    ```
     pip install -r requirements.txt
     ```
-  * Agent Unix (l'utilisation sous Windows sera disponible plus tard)
+
+ * Installation et paramétrage des queues Windows et Linux :
+    * Agent Unix : tom_submit.azdatafactory
+    * Agent Windows : submit_queue_azdatafactory.bat 
+  
+  Renseigner la variable **PROJECT_PATH** dans la queue batch (Windows ou Linux) pour indiquer votre répertoire projet.
+  
+  Exemples : 
+  ```
+  set PROJECT_PATH=%TOM_HOME%\SCRIPTS\AzureDataFactory\
+  ```
+  ou
+  ```
+ project_path=/var/lib/absyss/visual-tom/scripts/azure/az-datafactory
+  ```
 
 # Consignes
 
-  * Créer une application Azure et définir les variables d'environnement suivantes dans config.py dans le même dossier (un template est disponible dans le dépôt):
+  * Créer une application Azure et définir les variables d'environnement suivantes dans un objet Contexte dans Visual TOM :
     * `AZURE_SUBSCRIPTION_ID`: Subscription ID de votre Azure subscription
     * `AZURE_TENANT_ID`: Tenant ID de votre Azure Active Directory
     * `AZURE_CLIENT_ID`: Client ID de votre application Azure Active Directory
     * `AZURE_CLIENT_SECRET`: Secret client de votre application Azure Active Directory
     * `AZURE_DATA_FACTORY_RESOURCE_GROUP`: Resource group de votre Azure Data Factory
+
+  L'utilisation des Ressources Secrets est recommandée :
+  ![Custom application screenshot](screenshots/AzureDataFactory_Context.png?raw=true)
+  
   * Créer dans Visual TOM une connexion "Custom Application" avec la définition suivante ou importer le fichier MyApplication-AzureDataFactory.xml:
   ```bash
   vtimport -x -f MyApplication-AzureDataFactory.xml
   ```
-  ![Custom application screenshot](screenshots/Azure_DataFactory_CustomApplication.png?raw=true)
+  ![Custom application screenshot](screenshots/AzureDataFactory_CustomApp_WebInterface.png?raw=true)
   * Créer la queue batch sur les Agents et mettre à jour le submitter avec le chemin réel de azureDataFactory.py
 
 Description des paramètres:
